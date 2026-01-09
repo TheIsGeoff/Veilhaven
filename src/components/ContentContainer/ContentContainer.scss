@@ -1,0 +1,25 @@
+.content-container {
+  padding: 1rem;
+  max-width: fit-content;
+  max-height: fit-content;
+  position: relative;
+
+  background-color: #b5aa96;
+  color: #282520;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border: 2px solid #897d67;
+    pointer-events: none;
+  }
+}
+
+.content-container--expanded {
+  max-width: 100%;
+}

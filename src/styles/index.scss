@@ -3,3 +3,41 @@
   line-height: 1.5;
   font-weight: 400;
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #efefef;
+}
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+}
+
+body {
+  background-image: linear-gradient(to bottom, #080b07, #374633);
+}
+
+.page-wrapper {
+  display: grid;
+  grid-template-rows: auto 1fr; // first row auto height, second row fills remaining space
+  grid-template-columns: 275px 1fr; // for second row: fixed + flexible
+  gap: 1rem;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+
+  // First child spans full width
+  > :first-child {
+    grid-column: 1 / -1;
+  }
+}
+
+.page-wrapper--secondary {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}

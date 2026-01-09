@@ -5,4 +5,4 @@ Veilhaven is a collaborative story game where every player helps shape the world
 ## Worflow
 
 Veilhaven is built with Vite React & scss for the User Interface.
-backend is handled with superbase.
+Backend is handled with superbase.
