@@ -1,10 +1,8 @@
-import { useState } from "react";
 import "./styles/App.scss";
 import ContentContainer from "./components/ContentContainer/ContentContainer.jsx";
+import Account from "./components/Account/Account.jsx";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
       <div className="page-wrapper">
@@ -15,10 +13,7 @@ function App() {
           />
         </div>
         <div className="page-wrapper--secondary">
-          <ContentContainer
-            additionalClass="content-container--expanded"
-            children=""
-          />
+          <Account />
         </div>
         <div className="page-wrapper--secondary">
           <ContentContainer

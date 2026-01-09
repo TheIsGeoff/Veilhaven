@@ -1,0 +1,134 @@
+// Account Login / Register Styles
+.login,
+.join {
+  width: 243px;
+  max-width: 243px !important;
+  height: fit-content;
+  color: #282520;
+  padding-bottom: 10px;
+
+  > h1 {
+    font-size: 1.2rem;
+    font-weight: 800;
+    padding-bottom: 0.25rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #897d67;
+    text-align: left;
+    font-family: inherit;
+  }
+}
+
+.account {
+  width: fit-content;
+  height: fit-content;
+}
+
+.join {
+  padding: 0px;
+  padding-bottom: 2px;
+}
+
+.login__group {
+  margin-bottom: 0.5rem;
+}
+
+.account__input,
+.login__group > .login__password {
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+  box-sizing: border-box;
+  border: 1px solid #897d67;
+  height: 42px;
+  background-color: #282520;
+  color: #ede3d2;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+
+  & > input {
+    color: #ede3d2;
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    background-color: transparent;
+  }
+}
+
+.account__input,
+.login__group > .login__password > input {
+  outline: none;
+  width: 100%;
+}
+
+.login__password--toggle {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  > svg {
+    width: 100%;
+    height: 100%;
+    color: #ede3d2;
+    fill: #ede3d2;
+    transition: all 0.1s ease-in-out;
+    &:active {
+      opacity: 0.6;
+    }
+  }
+}
+
+.login__group > label {
+  display: block;
+  width: 100%;
+  text-align: left;
+}
+
+.login__remember-and-submit {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #897d67;
+}
+
+.login__remember-and-submit--join {
+  border: none;
+  margin: 0px;
+  padding-bottom: 0px;
+}
+
+.login__remember-me {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: fit-content;
+  cursor: pointer;
+
+  > input {
+    border: 1px solid #897d67;
+  }
+}
+
+.login__link {
+  color: #42686b;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  font-weight: 800;
+  &:hover {
+    color: #365a5d;
+  }
+}
+
+#rememberMe {
+  background-color: #282520;
+  border: 1px solid #897d67;
+}

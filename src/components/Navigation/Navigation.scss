@@ -1,0 +1,28 @@
+.navigation {
+  padding: 0px 1rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.navigation--element {
+  padding: 0px 0.5rem 0.25rem 0.5rem;
+  margin-right: 2px;
+  min-width: 56px;
+  cursor: pointer;
+  font-weight: 700;
+  color: #b3dcdf;
+  border-bottom: 0px solid transparent;
+  display: flex;
+  justify-content: center;
+  transition: all 0.2s ease-out;
+
+  &:hover {
+    color: #b5aa96;
+    border-bottom: 5px solid #b5aa96;
+  }
+}
+
+.navigation--element--active {
+  color: #b5aa96;
+  border-bottom: 5px solid #b5aa96;
+}

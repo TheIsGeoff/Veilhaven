@@ -1,0 +1,96 @@
+// Color variables
+$btn-text: #b9e1e4;
+$btn-bg: #42686b;
+$btn-border: #2d5256;
+$btn-before-border: #5f959b;
+
+$btn-hover-bg: #497477;
+$btn-hover-border: #497477;
+$btn-hover-before-border: #7faeb2;
+
+$btn-active-bg: #365a5d;
+$btn-active-border: #254343;
+$btn-active-before-border: #5f959b;
+$btn-active-shadow: rgba(0, 0, 0, 0.22);
+
+.button {
+  box-sizing: border-box;
+  padding: 10px 25px;
+  border-radius: 0;
+  position: relative;
+  font-weight: 800;
+  min-width: 96px;
+  transition: all 0.1s ease-in-out;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+}
+
+.button--primary {
+  color: $btn-text;
+  background-color: $btn-bg;
+  border: 1px solid $btn-border;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 1px solid $btn-before-border;
+  }
+
+  &:hover {
+    background-color: $btn-hover-bg;
+    border-color: $btn-hover-border;
+
+    &::before {
+      border-color: $btn-hover-before-border;
+    }
+  }
+
+  &:active {
+    background-color: $btn-active-bg;
+    border-color: $btn-active-border;
+    box-shadow: inset 0 2px 5px $btn-active-shadow;
+
+    &::before {
+      border-color: $btn-active-before-border;
+    }
+  }
+}
+
+.button--secondary {
+  color: $btn-text;
+  background-color: $btn-bg;
+  border: 1px solid $btn-border;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 1px solid $btn-before-border;
+  }
+
+  &:hover {
+    background-color: $btn-hover-bg;
+    border-color: $btn-hover-border;
+
+    &::before {
+      border-color: $btn-hover-before-border;
+    }
+  }
+
+  &:active {
+    background-color: $btn-active-bg;
+    border-color: $btn-active-border;
+    box-shadow: inset 0 2px 5px $btn-active-shadow;
+
+    &::before {
+      border-color: $btn-active-before-border;
+    }
+  }
+}
