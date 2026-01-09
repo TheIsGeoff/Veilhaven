@@ -1,12 +1,8 @@
-# React + Vite
+# VEILHAVEN
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Veilhaven is a collaborative story game where every player helps shape the world. When you first join, you are given a prompt—a glimpse into the mysterious world around you. From there, your task is to continue the story through 1000-character journal entries. You can write about anything: locations, characters, events, or hidden secrets. Once shared, other players can upvote your entry, helping to shape the evolving world and determining which contributions become part of Veilhaven’s lore.
 
-Currently, two official plugins are available:
+## Worflow
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Veilhaven is built with Vite React & scss for the User Interface.
+backend is handled with superbase.
