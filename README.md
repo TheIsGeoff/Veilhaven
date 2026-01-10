@@ -11,6 +11,7 @@ When you first join, you are given a prompt—a glimpse into the mysterious worl
 **Veilhaven** is built with **REACT** and **VITE**
 
 • This was chosen as it is flexible relitivly easy to use, which is grate as most of my projects run on hopes and dreams, lol.
+
 • For styles I went with **SCSS** as its just alot cleaner then basic **CSS**.
 
 The frontend communicates directly with superbase avoiding the need for a backend API, as thats to perplexing.
