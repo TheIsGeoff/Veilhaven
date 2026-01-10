@@ -8,7 +8,7 @@ import Header from "./components/Header/Header.jsx";
 import ErrorMessage from "./components/ErrorMessage/ErrorMessage.jsx";
 
 function App() {
-  const [authError, setAuthError] = useState(null); // ❗ starts as nothing
+  const [authError, setAuthError] = useState(null);
 
   return (
     <div className="page-wrapper">
@@ -19,7 +19,6 @@ function App() {
       <div className="page-wrapper--secondary sticky account-wrapper">
         <Account setAuthError={setAuthError} />
 
-        {/* ✅ ONLY GENERATED WHEN authError EXISTS */}
         {authError && <ErrorMessage message={authError} />}
       </div>
 
