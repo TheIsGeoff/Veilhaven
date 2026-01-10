@@ -1,6 +1,9 @@
 import "./styles/App.scss";
 import ContentContainer from "./components/ContentContainer/ContentContainer.jsx";
 import Account from "./components/Account/Account.jsx";
+import Navigation from "./components/Navigation/Navigation.jsx";
+import Footer from "./components/Footer/Footer.jsx";
+import Feed from "./components/Feed/Feed.jsx";
 
 function App() {
   return (
@@ -12,15 +15,13 @@ function App() {
             children=""
           />
         </div>
-        <div className="page-wrapper--secondary">
+        <div className="page-wrapper--secondary sticky">
           <Account />
         </div>
         <div className="page-wrapper--secondary">
-          <ContentContainer
-            additionalClass="content-container--expanded"
-            children=""
-          />
+          <Feed />
         </div>
+        <Footer />
       </div>
     </>
   );

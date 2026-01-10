@@ -1,7 +1,9 @@
 .navigation {
   padding: 0px 1rem;
+  padding-top: 2rem;
   display: flex;
   flex-direction: row;
+  background-image: linear-gradient(to bottom, #080b07, #374633);
 }
 
 .navigation--element {

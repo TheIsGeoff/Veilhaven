@@ -1,14 +1,15 @@
 import "./Navigation.scss";
 
-function Navigation({ items }) {
+function Navigation({ items, activeIndex, onChange }) {
   return (
     <nav className="navigation">
       {items.map((item, index) => (
         <div
           key={index}
           className={`navigation--element ${
-            index === 0 ? "navigation--element--active" : ""
+            index === activeIndex ? "navigation--element--active" : ""
           }`}
+          onClick={() => onChange(index)}
         >
           {item}
         </div>

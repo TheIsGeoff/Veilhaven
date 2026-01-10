@@ -1,0 +1,27 @@
+.footer {
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  grid-column: 1 / -1;
+  color: #efefef;
+  margin-top: 2rem;
+  border-top: 2px solid #b5aa96;
+  > p,
+  > a {
+    font-size: 1rem;
+    padding: 0px 1rem;
+    text-decoration: none;
+    min-width: 245px;
+    text-align: center;
+    font-weight: 700;
+  }
+
+  > a {
+    color: #b3dcdf;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

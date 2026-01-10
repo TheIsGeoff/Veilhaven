@@ -23,6 +23,7 @@ $btn-active-shadow: rgba(0, 0, 0, 0.22);
   transition: all 0.1s ease-in-out;
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.35);
   cursor: pointer;
+  border-radius: 2px;
 }
 
 .button--primary {
@@ -38,6 +39,7 @@ $btn-active-shadow: rgba(0, 0, 0, 0.22);
     right: 0;
     bottom: 0;
     border: 1px solid $btn-before-border;
+    border-radius: 1px;
   }
 
   &:hover {

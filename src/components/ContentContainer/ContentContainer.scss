@@ -7,6 +7,7 @@
   background-color: #b5aa96;
   color: #282520;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+  border-radius: 2px;
 
   &::before {
     content: "";
@@ -17,9 +18,26 @@
     bottom: 5px;
     border: 2px solid #897d67;
     pointer-events: none;
+    border-radius: 1px;
   }
 }
 
 .content-container--expanded {
   max-width: 100%;
+}
+
+.content-container--journal {
+  background-color: #d6cfc1;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.35);
+  padding: 1rem;
+  outline: 1px solid #b3a998;
+  margin-bottom: 1rem;
+  &::before {
+    border: 1px solid transparent;
+  }
+}
+
+.content-container--journal-special {
+  background-color: #d7dfdf;
+  outline: 1px solid #a0abab;
 }
