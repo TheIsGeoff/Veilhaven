@@ -5,16 +5,17 @@
   align-items: center;
 
   flex-direction: row;
-  margin: 1rem 2rem 2rem 2rem;
-  color: #d6cfc1;
+  margin: 1.5rem;
+  color: #2d5256;
   > i {
     min-width: fit-content;
     margin-right: 1rem;
+    font-weight: 600;
   }
 }
 
 .devider {
   width: 100%;
   height: 1.5px;
-  background-color: #b5aa96;
+  background-color: #2d5256;
 }

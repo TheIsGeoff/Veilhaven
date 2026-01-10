@@ -3,6 +3,7 @@ import "./Feed.scss";
 import JournalSpecial from "../JournalElement/JournalSpecial";
 import Timeline from "../Timeline/Timeline.jsx";
 import Navigation from "../Navigation/Navigation";
+import ContentContainer from "../ContentContainer/ContentContainer.jsx";
 
 function Feed() {
   // 🔹 This index controls EVERYTHING
@@ -21,13 +22,18 @@ function Feed() {
         activeIndex={activeIndex}
         onChange={setActiveIndex}
       />
-
-      <JournalSpecial />
-      <div className="devider-wrapper">
-        <i>{navItems[activeIndex]} Entrys</i>
-        <div className="devider"></div>
-      </div>
-      <Timeline state={timelineStates[activeIndex]} />
+      <ContentContainer
+        children={
+          <>
+            <JournalSpecial />
+            <div className="devider-wrapper">
+              <i>{navItems[activeIndex]} Entrys</i>
+              <div className="devider"></div>
+            </div>
+            <Timeline state={timelineStates[activeIndex]} />
+          </>
+        }
+      />
     </>
   );
 }

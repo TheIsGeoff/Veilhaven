@@ -3,15 +3,33 @@ import "./Account.scss";
 import CustomButton from "../Buttons/PrimaryButton";
 import PasswordVisible from "../../assets/icons/eye-solid-full.svg?react";
 import PasswordHidden from "../../assets/icons/eye-slash-solid-full.svg?react";
+import { logIn } from "../../services/authServices.js";
 
 function LogIn() {
   const [showPassword, setShowPassword] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false); // Loader state
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    setLoading(true); // show loader
+    try {
+      const user = await logIn(email, password);
+      console.log("Logged in user:", user);
+    } catch (err) {
+      console.error("Login error:", err.message);
+      alert(err.message);
+    } finally {
+      setLoading(false); // hide loader
+    }
+  };
 
   return (
     <div id="login" className="login">
       <h1>Login</h1>
 
-      <form>
+      <form onSubmit={handleLogin}>
         <div className="login__group">
           <label htmlFor="email">Email Address</label>
           <input
@@ -19,19 +37,21 @@ function LogIn() {
             type="text"
             id="email"
             name="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </div>
 
         <div className="login__group">
           <label htmlFor="password">Password</label>
-
           <div className="login__password">
             <input
               type={showPassword ? "text" : "password"}
               id="password"
               name="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
-
             <button
               type="button"
               className="login__password--toggle"
@@ -49,7 +69,10 @@ function LogIn() {
             Remember Me
           </label>
 
-          <CustomButton label="Log In" type="submit" />
+          <CustomButton
+            label={loading ? <div className="loader"></div> : "LogIn"}
+            type="submit"
+          ></CustomButton>
         </div>
 
         <a className="login__link" href="#">
