@@ -5,13 +5,16 @@ import PasswordVisible from "../../assets/icons/eye-solid-full.svg?react";
 import PasswordHidden from "../../assets/icons/eye-slash-solid-full.svg?react";
 import { logIn } from "../../services/authServices.js";
 
-function LogIn() {
+function LogIn({ setAuthError }) {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [loading, setLoading] = useState(false); // Loader state
+  const [loading, setLoading] = useState(false);
 
   const handleLogin = async (e) => {
+    setAuthError(null);
+    setLoading(true);
+
     e.preventDefault();
     setLoading(true); // show loader
     try {
@@ -19,7 +22,7 @@ function LogIn() {
       console.log("Logged in user:", user);
     } catch (err) {
       console.error("Login error:", err.message);
-      alert(err.message);
+      setAuthError(err.message);
     } finally {
       setLoading(false); // hide loader
     }

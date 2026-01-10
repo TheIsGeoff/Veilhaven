@@ -5,14 +5,17 @@ import PasswordVisible from "../../assets/icons/eye-solid-full.svg?react";
 import PasswordHidden from "../../assets/icons/eye-slash-solid-full.svg?react";
 import { signUp } from "../../services/authServices.js";
 
-function Join() {
+function Join({ setAuthError }) {
   const [showPassword, setShowPassword] = useState(false);
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [loading, setLoading] = useState(false); // Loader state
+  const [loading, setLoading] = useState(false);
 
   const handleJoin = async (e) => {
+    setAuthError(null);
+    setLoading(true);
+
     e.preventDefault();
     setLoading(true); // show loader
     try {
@@ -20,7 +23,7 @@ function Join() {
       console.log("Signed up user:", user);
     } catch (err) {
       console.error("Signup error:", err.message);
-      alert(err.message);
+      setAuthError(err.message);
     } finally {
       setLoading(false); // hide loader
     }

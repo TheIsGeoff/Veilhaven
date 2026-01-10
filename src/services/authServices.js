@@ -2,21 +2,21 @@ import { supabase } from "../lib/superbase.js";
 
 // Sign up and insert profile
 export async function signUp(email, password, username) {
-  // 1️⃣ Sign up
+  // Sign up
   const { data: signUpData, error: signUpError } = await supabase.auth.signUp({
     email,
     password,
   });
   if (signUpError) throw signUpError;
 
-  // 2️⃣ Wait for session to exist
+  // Wait for session to exist
   const { data: signInData, error: signInError } =
     await supabase.auth.signInWithPassword({ email, password });
   if (signInError) throw signInError;
 
   const userId = signInData.user.id;
 
-  // 3️⃣ Insert profile row
+  // Insert profile row
   const { error: profileError } = await supabase
     .from("profiles")
     .insert([{ id: userId, username, email }]);

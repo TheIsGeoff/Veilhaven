@@ -8,7 +8,7 @@ import Profile from "./Profile.jsx";
 import { supabase } from "../../lib/superbase.js";
 import { getProfile } from "../../services/authServices.js";
 
-function Account() {
+function Account({ setAuthError }) {
   const [activeTab, setActiveTab] = useState(0);
   const [loggedIn, setLoggedIn] = useState(false);
   const [username, setUsername] = useState("");
@@ -16,10 +16,10 @@ function Account() {
 
   useEffect(() => {
     const fetchProfile = async (user) => {
-      // 1️⃣ Try to fetch the profile
+      // Try to fetch the profile
       let profile = await getProfile(user.id);
 
-      // 2️⃣ If profile doesn't exist, insert default
+      // If profile can't be found, insert default
       if (!profile) {
         const { data: insertedProfile, error: insertError } = await supabase
           .from("profiles")
@@ -94,8 +94,8 @@ function Account() {
             </>
           ) : (
             <>
-              {activeTab === 0 && <LogIn />}
-              {activeTab === 1 && <Join />}
+              {activeTab === 0 && <LogIn setAuthError={setAuthError} />}
+              {activeTab === 1 && <Join setAuthError={setAuthError} />}
             </>
           )}
         </ContentContainer>

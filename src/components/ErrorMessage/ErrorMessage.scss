@@ -1,0 +1,19 @@
+.error-message {
+  background-color: rgb(147, 43, 43);
+  color: #ede3d2;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  &::before {
+    border: 2px solid rgb(107, 32, 32);
+  }
+  > button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-weight: 900;
+    color: #ede3d2;
+    cursor: pointer;
+    padding: 5px;
+  }
+}
