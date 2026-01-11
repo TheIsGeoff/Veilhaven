@@ -19,7 +19,7 @@ export async function signUp(email, password, username) {
   // Insert profile row
   const { error: profileError } = await supabase
     .from("profiles")
-    .insert([{ id: userId, username, email }]);
+    .insert([{ id: userId, username, email, pfp: 0, level: 0 }]);
   if (profileError) throw profileError;
 
   return signInData.user;

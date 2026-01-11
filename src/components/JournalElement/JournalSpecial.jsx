@@ -1,5 +1,6 @@
 import "./Journal.scss";
 import ContentContainer from "../ContentContainer/ContentContainer.jsx";
+import LetterImage from "../../assets/images/letters/letter.png";
 
 function JournalSpecial() {
   return (
@@ -8,10 +9,7 @@ function JournalSpecial() {
         <>
           <div className="journal-wrapper">
             <div className="journal--image">
-              <img
-                src="https://i.pinimg.com/736x/99/43/1a/99431a5a5e418dc7f1d701f647647d6f.jpg"
-                alt=""
-              />
+              <img src={LetterImage} alt="A handwritten letter" />
             </div>
             <div className="journal--text journal-special--text">
               <h1 className="journal-special__title">

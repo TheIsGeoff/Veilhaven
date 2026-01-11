@@ -1,4 +1,3 @@
-// Account Login / Register Styles
 .login,
 .join,
 .profile,
@@ -226,4 +225,47 @@ input:-webkit-autofill:active {
   padding-bottom: 1rem;
   margin-bottom: 1rem;
   border-bottom: 2px solid #897d67;
+}
+
+.profile--level-wrapper {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 6px;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #897d67;
+  > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+    > label {
+      width: 100%;
+      text-align: left;
+      color: #42686b;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+  }
+}
+
+.profile--level-image {
+  width: 34px;
+  height: 34px;
+  background-color: #897d67;
+  border-radius: 2px;
+  border: none;
+  margin: 2px;
+  margin-top: 8px;
+}
+
+progress[value] {
+  background-color: #282520;
+  accent-color: #b9e1e4;
+  border: none;
+  height: 6px;
+  border-radius: 4px;
+  width: 100%;
 }

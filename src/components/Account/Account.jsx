@@ -14,6 +14,7 @@ function Account({ setAuthError }) {
   const [loggedIn, setLoggedIn] = useState(false);
   const [username, setUsername] = useState("");
   const [pfp, setPfp] = useState(0);
+  const [level, setLevel] = useState(0);
 
   useEffect(() => {
     const fetchProfile = async (user) => {
@@ -26,9 +27,10 @@ function Account({ setAuthError }) {
           .from("profiles")
           .insert({
             id: user.id,
-            username: user.email, // temporary default username
+            username: user.email,
             email: user.email,
-            pfp: 0, // default pfp
+            pfp: 0,
+            level: 0,
           })
           .select()
           .maybeSingle();
@@ -40,9 +42,9 @@ function Account({ setAuthError }) {
         }
       }
 
-      // 3️⃣ Set state safely
       setUsername(profile?.username ?? user.email);
       setPfp(profile?.pfp ?? 0);
+      setLevel(profile?.level ?? 0);
     };
 
     const checkSession = async () => {
@@ -68,6 +70,7 @@ function Account({ setAuthError }) {
         setLoggedIn(false);
         setUsername("");
         setPfp(0);
+        setLevel(0);
       }
     });
 
@@ -90,11 +93,14 @@ function Account({ setAuthError }) {
         <ContentContainer additionalClass="content-container--expanded">
           {loggedIn ? (
             <>
-              {activeTab === 0 && <Profile username={username} pfp={pfp} />}
+              {activeTab === 0 && (
+                <Profile username={username} pfp={pfp} level={level} />
+              )}
               {activeTab === 1 && (
                 <Settings
                   username={username}
                   pfp={pfp}
+                  level={level}
                   onProfileUpdated={(nextProfile) => {
                     if (!nextProfile) return;
                     if (typeof nextProfile.username === "string") {

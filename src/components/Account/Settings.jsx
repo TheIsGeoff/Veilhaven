@@ -43,10 +43,10 @@ function Settings({ username, pfp, onProfileUpdated }) {
         ),
       ]);
 
-      console.log("✅ Profile updated:", updated);
+      console.log(" Profile updated:", updated);
       onProfileUpdated?.({ username: updated.username, pfp: updated.pfp });
     } catch (err) {
-      console.error("❌ Save error:", err?.message ?? err);
+      console.error(" Save error:", err?.message ?? err);
     } finally {
       setLoading(false);
     }
@@ -61,7 +61,7 @@ function Settings({ username, pfp, onProfileUpdated }) {
         selectedPfp === id ? "pfp-options--option--selected" : ""
       }`}
     >
-      <img src={`public/pfp/${id}.jpg`} alt={`Profile ${id}`} />
+      <img src={`public/pfp/${id}.png`} alt={`Profile ${id}`} />
     </button>
   ));
 
@@ -78,6 +78,9 @@ function Settings({ username, pfp, onProfileUpdated }) {
             type="text"
             id="username"
             name="username"
+            autoComplete="false"
+            minLength={2}
+            maxLength={25}
             value={editedUsername}
             onChange={(e) => setEditedUsername(e.target.value)}
           />
