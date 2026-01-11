@@ -5,6 +5,7 @@ import ContentContainer from "../ContentContainer/ContentContainer";
 import Join from "./Join.jsx";
 import LogIn from "./LogIn.jsx";
 import Profile from "./Profile.jsx";
+import Settings from "./Settings.jsx";
 import { supabase } from "../../lib/superbase.js";
 import { getProfile } from "../../services/authServices.js";
 
@@ -90,7 +91,21 @@ function Account({ setAuthError }) {
           {loggedIn ? (
             <>
               {activeTab === 0 && <Profile username={username} pfp={pfp} />}
-              {activeTab === 1 && <p>Settings</p>}
+              {activeTab === 1 && (
+                <Settings
+                  username={username}
+                  pfp={pfp}
+                  onProfileUpdated={(nextProfile) => {
+                    if (!nextProfile) return;
+                    if (typeof nextProfile.username === "string") {
+                      setUsername(nextProfile.username);
+                    }
+                    if (typeof nextProfile.pfp === "number") {
+                      setPfp(nextProfile.pfp);
+                    }
+                  }}
+                />
+              )}
             </>
           ) : (
             <>

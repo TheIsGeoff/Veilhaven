@@ -47,6 +47,25 @@ export async function getProfile(userId) {
   return data; // can be null if no profile exists
 }
 
+// Update username + profile picture
+export async function updateUsernameAndPfp(userId, username, pfp) {
+  const { data, error } = await supabase
+    .from("profiles")
+    .update({ username, pfp })
+    .eq("id", userId)
+    .select("id, username, pfp")
+    .maybeSingle();
+
+  if (error) throw error;
+  if (!data) {
+    throw new Error(
+      "Profile was not updated (no row returned). Check the row exists and your Supabase RLS policy allows updates."
+    );
+  }
+
+  return data;
+}
+
 // Logout
 export async function logOut() {
   await supabase.auth.signOut();

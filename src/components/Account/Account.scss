@@ -1,7 +1,8 @@
 // Account Login / Register Styles
 .login,
 .join,
-.profile {
+.profile,
+.settings {
   width: 243px;
   max-width: 243px !important;
   height: fit-content;
@@ -18,6 +19,19 @@
     font-family: inherit;
     min-height: 32px;
   }
+
+  > h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    padding-bottom: 0.25rem;
+    text-align: left;
+    font-family: inherit;
+    min-height: 28px;
+  }
+}
+
+.settings {
+  padding-bottom: 0px;
 }
 
 .account {
@@ -173,4 +187,43 @@ input:-webkit-autofill:active {
   > .loader {
     position: absolute;
   }
+}
+
+.pfp-options {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 4px;
+}
+
+.pfp-options--option {
+  width: 100%;
+  aspect-ratio: 1 / 1 !important;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+  outline: none;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #897d67;
+  border: 1px solid #282520b7;
+  outline: 1px solid #897d67;
+  > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.pfp-options--option--selected {
+  background-color: #42686b;
+  border: 1px solid #5f959b;
+  outline: 2px solid #2d5256;
+}
+
+.account__group--settings {
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #897d67;
 }
